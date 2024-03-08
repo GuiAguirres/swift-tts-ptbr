@@ -90,7 +90,7 @@ private final class Engine: NSObject, AVSpeechSynthesizerDelegate {
 
 public extension SwiftTTS {
     static var live: Self {
-        let engine = Engine(rateRatio: 1.0, voice: AVSpeechSynthesisVoice(language: "pt-BR"))
+        let engine = Engine(rateRatio: 1.0, voice: AVSpeechSynthesisVoice(language: NSLocale.current.languageCode))
 
         let isSpeaking = AsyncStream { continuation in
             engine.isSpeaking = {
